@@ -1,0 +1,33 @@
+.input-container {
+  display: inline-block;
+  width: 300px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+input[type="text"] {
+  text-align: left;
+  background-color: #f1f1f1;
+  font-size: 1.35em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  border: 1px solid #d4d4d4;
+  padding: 10px;
+  text-align: start;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #e9e9e9;
+}
