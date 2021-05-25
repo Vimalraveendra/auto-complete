@@ -1,9 +1,8 @@
 import React from 'react';
 import "./inputField.css"
 
-const InputField = ({inputText,changeText,users,})=>{
+const InputField = ({inputText,changeText,users,renderUsername})=>{
   users = users.sort((a,b)=>a.name.localeCompare(b.name));
-  console.log('users',users)
     return(
 
         <div className="input-container">
@@ -17,7 +16,10 @@ const InputField = ({inputText,changeText,users,})=>{
              <ul>
              {
              users.map(user=>
-               <li key={user.id}>{user.name}</li>
+               <li key={user.id} 
+               onClick={()=>renderUsername(user.name)}>
+               {user.name}
+               </li>
              )}
             </ul>:null
            
