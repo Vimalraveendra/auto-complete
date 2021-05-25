@@ -25,7 +25,10 @@ function App() {
     
   }
 
-
+const renderUsername =(name)=>{
+  setInputText(name)
+  setFilteredList([])
+}
 
 
   
@@ -45,7 +48,12 @@ function App() {
      <h2>Auto Complete</h2>
      <h4>Start Typing...</h4>
      <div className="input-credentials">
-     <InputField inputText={inputText} changeText={changeText} users={filteredList} />
+     <InputField
+      inputText={inputText} 
+      changeText={changeText} 
+      users={filteredList}
+      renderUsername={renderUsername} 
+      />
      <button>Submit</button>
      </div>
      

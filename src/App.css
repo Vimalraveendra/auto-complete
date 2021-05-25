@@ -8,9 +8,17 @@
   align-items: flex-start;
 }
 button {
-  padding: 12px;
+  padding: 10px;
   font-size: 1.25em;
   margin-left: 3px;
   background-color: dodgerblue;
   border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: deepskyblue;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
 }
