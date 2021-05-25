@@ -2,10 +2,33 @@ import React,{useState,useEffect} from 'react'
 import './App.css';
 import axios from 'axios'
 
-import UsersList from './components/usersList/usersList.component'
+import InputField from './components/InputField/inputField.component';
+
 
 function App() {
   const [usersList,setUsersList] = useState([]);
+  const [filteredList,setFilteredList] = useState([]);
+  const [inputText,setInputText] = useState("");
+
+ 
+  const changeText =(event)=>{
+    let newUsersList=filteredList;
+   let value = event.target.value;
+    if(value.length>0){
+     newUsersList= usersList.filter(user=>user.name.toLowerCase().includes(value.toLowerCase()))
+    }else{
+      newUsersList=[];
+    }
+    setInputText(value)
+    setFilteredList(newUsersList)
+  
+    
+  }
+
+
+
+
+  
 
   useEffect(()=>{
     const fetchedUsers = async()=>{
@@ -19,9 +42,17 @@ function App() {
 
   return (
     <div className="App">
-     <UsersList users={usersList} />
+     <h2>Auto Complete</h2>
+     <h4>Start Typing...</h4>
+     <div className="input-credentials">
+     <InputField inputText={inputText} changeText={changeText} users={filteredList} />
+     <button>Submit</button>
+     </div>
+     
     </div>
   );
 }
 
 export default App;
+
+
